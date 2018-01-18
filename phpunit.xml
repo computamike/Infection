@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit
+  bootstrap="vendor/autoload.php"
+	colors="true"
+	stopOnFailure="false"
+	backupGlobals="false"
+	backupStaticAttributes="false"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	processIsolation='false'
+	syntaxCheck="false"
+	cacheTokens="false"
+	debug="true"
+	verbose="true">
+	<testsuites>
+		<testsuite name="Infection Test Suite">
+              <directory suffix=".php">./tests</directory>
+		</testsuite>
+	</testsuites>
+  <filter>
+      <whitelist  addUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">./src/</directory>
+      </whitelist>
+
+  </filter>
+	<logging>
+		<log type="coverage-text" target="php://stdout" showUncoveredFiles="false" />
+		<log type="coverage-html" target="./coverage" lowUpperBound="35" highLowerBound="70"/>
+  		<log type="coverage-clover" target="./coverage/coverage.xml"/>
+		<log type="junit" target="./coverage/junit.xml" />
+		<log type="testdox-text" target="./coverage/output.txt" />
+		<log type="testdox-html" target="./coverage/output.html" />
+	</logging>
+</phpunit>

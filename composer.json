@@ -1,0 +1,20 @@
+{
+    "name": "mikehingley/infection",
+    "description": "Test repository for local infection testing",
+    "type": "project",
+    "require-dev": {
+        "infection/infection": "^0.7.0",
+        "phpunit/phpunit": "^6.5",
+        "squizlabs/php_codesniffer": "^3.2"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Mike Hingley",
+            "email": "mike.hingley@apc-overnight.com"
+        }
+    ],
+    "require": {},
+    "scripts" : {
+        "lint": [ "vendor/bin/phpcs -s --standard=PEAR --extensions=php src"]}
+}
