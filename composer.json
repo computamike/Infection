@@ -5,7 +5,10 @@
     "require-dev": {
         "infection/infection": "^0.7.0",
         "phpunit/phpunit": "^6.5",
-        "squizlabs/php_codesniffer": "^3.2"
+        "squizlabs/php_codesniffer": "^3.2",
+        "wp-coding-standards/wpcs": "^0.14.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+        "brain/monkey": "^2.2"
     },
     "license": "GPL",
     "authors": [
@@ -16,5 +19,7 @@
     ],
     "require": {},
     "scripts" : {
-        "lint": [ "vendor/bin/phpcs -s --standard=PEAR --extensions=php src"]}
+        "lint": [ "vendor/bin/phpcs -s --standard=PEAR --extensions=php src"],
+        "mutate": [ "vendor/bin/infection"]
+    }
 }
